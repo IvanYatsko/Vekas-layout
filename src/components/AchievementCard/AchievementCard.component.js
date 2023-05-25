@@ -46,9 +46,9 @@ const LIST = [
 
 const AchievementCard = () => {
   return (
-    <div className=" mt-[70px] flex flex-wrap gap-[30px]">
+    <div className="flex xl:grid grid-cols-2 mt-[70px] gap-[30px]">
       {LIST.map((item) => (
-        <div key={item.title} className="bg-gray bg-opacity-60 rounded-[15px] max-w-[635px]">
+        <div key={item.title} className="bg-gray bg-opacity-60 rounded-[15px] w-[636px] xl:max-w-[636px] xl:w-full">
           <img src={`./images/${item.image}.png`} alt={item.image} />
           <div className="ml-[30px] mt-[30px] mb-[60px]">
             <p className="text-green font-semibold text-xl mb-5">{item.title}</p>

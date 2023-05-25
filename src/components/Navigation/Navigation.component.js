@@ -9,7 +9,7 @@ const LIST_LINKS = [
 const Navigation = () => {
   return (
     <nav>
-      <ul className="flex gap-[50px]">
+      <ul className="flex gap-7 xl:gap-[50px]">
         {LIST_LINKS.map((item) => (
           <li key={item}>
             <a href="/">{item}</a>

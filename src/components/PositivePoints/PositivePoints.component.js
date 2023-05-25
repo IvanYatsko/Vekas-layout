@@ -18,11 +18,11 @@ const LIST = [
 ]
 
 const PositivePoints = () => {
-    return <div className="wrapper flex justify-between pt-[150px]">
+    return <div className="wrapper flex justify-between py-[150px] gap-[30px] flex-wrap">
         {LIST.map((item) => 
             <div key={item.value} className="flex flex-col items-center">
-                <p className="text-[50px] font-normal">{item.quantity}+</p>
-                <p className="text-3xl text-green font-medium">{item.value}</p>
+                <p className="text-[50px]">{item.quantity}+</p>
+                <p className="lg:text-3xl text-xl max-w-[115px] lg:max-w-none text-green font-medium text-center">{item.value}</p>
             </div>
         )}
     </div>
