@@ -1,3 +1,7 @@
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { useResize } from "../../hooks/useResize";
+
 const LIST = [
   {
     image: "manufacturers",
@@ -45,18 +49,37 @@ const LIST = [
 ];
 
 const AchievementCard = () => {
+  const { isScreenXxl } = useResize();
+  const [sliderRef] = useKeenSlider({
+    slides: { perView: "auto", spacing: isScreenXxl ? 0 : 15 },
+  });
+
   return (
-    <div className="flex xl:grid grid-cols-2 mt-[70px] gap-[30px]">
-      {LIST.map((item) => (
-        <div key={item.title} className="bg-gray bg-opacity-60 rounded-[15px] w-[636px] xl:max-w-[636px] xl:w-full">
+    <div
+      ref={sliderRef}
+      className={`${
+        !isScreenXxl ? "keen-slider " : "gap-[30px] "
+      }flex xl:grid grid-cols-2 mt-[70px] max-w-[1360px] last:-pr-8`}
+    >
+      {LIST.map((item, i) => (
+        <div
+          key={item.title}
+          className={`${
+            !isScreenXxl ? `keen-slider__slide number-slide${++i} ` : ""
+          }bg-gray bg-opacity-60 rounded-[15px] max-w-[315px] min-w-[315px] sm:max-w-[636px] sm:min-w-[636px]`}
+        >
           <img src={`./images/${item.image}.png`} alt={item.image} />
-          <div className="ml-[30px] mt-[30px] mb-[60px]">
-            <p className="text-green font-semibold text-xl mb-5">{item.title}</p>
+          <div className="mx-[20px] sm:mx-[30px] mt-[30px] mb-[60px]">
+            <p className="text-green font-semibold text-xl mb-5">
+              {item.title}
+            </p>
             <p>{item.discription}</p>
             <ul className="list-disc ml-5">
-                {item.properties.map((elem) => 
-                    <li className="mt-5" key={elem}>{elem}</li>
-                )}
+              {item.properties.map((elem) => (
+                <li className="mt-5" key={elem}>
+                  {elem}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

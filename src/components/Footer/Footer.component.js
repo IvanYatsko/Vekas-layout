@@ -33,7 +33,7 @@ const Footer = () => (
         {CONTACTS_LIST.map((item) => (
           <div key={item.text} className="flex">
             <img src={item.img} alt="connection" />
-            <span className="ml-1">{item.text}</span>
+            <span className="ml-1 hover:text-green active:text-[#16DB33] cursor-pointer">{item.text}</span>
           </div>
         ))}
       </div>
@@ -41,7 +41,7 @@ const Footer = () => (
         <ul className="flex flex-col gap-[12.5px] sm:-mt-9 lg:mt-0">
           {LIST_LINKS.map((item) => (
             <li key={item}>
-              <a href="/">{item}</a>
+              <a className="hover:text-green active:text-[#16DB33]" href="/">{item}</a>
             </li>
           ))}
         </ul>
@@ -57,7 +57,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="wrapper flex flex-col gap-[10px] sm:justify-between sm:flex-row text-right py-4 text-sm">
-      <p>Privacy Policy</p>
+      <p className="hover:text-green active:text-[#16DB33] cursor-pointer">Privacy Policy</p>
       <p>Copyright 2023 © All Right Reserved Design by Digital Ant</p>
     </div>
   </footer>

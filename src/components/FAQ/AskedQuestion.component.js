@@ -1,6 +1,12 @@
-import TypeIndustrie from "../TypeIndustrie/TypeIndustrie.component";
+import AskedQuestionItem from "./AskedQuestionItem.component";
 
 const LIST = [
+  {
+    question: "Does the system require a lot of space? Do we need to make changes to the layout of existing lines?",
+    answer:
+      "The system does not require too much space. It integrates into an existing production line.",
+    initialValue: true
+  },
   {
     question: "How much does the system cost?",
     answer:
@@ -31,16 +37,9 @@ const AskedQuestion = () => {
         Our cutting-edge technology is already used in 7 industries
       </p>
       <div className="mt-[70px] flex gap-[75px]">
-        <div className="flex flex-col gap-5 font-medium text-xl grow">
-          <div className="flex justify-between gap-14 py-4 px-[30px] bg-gray bg-opacity-60 rounded-[5px]">
-            <div className="flex flex-col">
-            <p>Does the system require a lot of space? Do we need to make changes to the layout of existing lines?</p>
-            <p>The system does not require too much space. It integrates into an existing production line.</p>
-            </div>
-            <img className="rotate-180" src="./images/arrow.svg" alt="arrow" />
-          </div>
+        <div className="flex w-full flex-col gap-5 text-base sm:font-medium sm:text-xl">
           {LIST.map((item) => (
-            <TypeIndustrie key={item.question} type={item.question} />
+            <AskedQuestionItem key={item.question} initialValue={item.initialValue} answer={item.answer} question={item.question} />
           ))}
         </div>
       </div>

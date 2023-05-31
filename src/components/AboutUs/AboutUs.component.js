@@ -9,7 +9,7 @@ const AboutUs = () => {
         solution that protects manufacturers' brands and keeps their consumers
         safe.
       </p>
-      <button className="bg-green px-8 py-4 rounded-[5px] mt-[50px] font-medium text-xl">
+      <button className="bg-green hover:bg-[#16DB33] active:bg-[#16DB33] px-8 py-4 rounded-[5px] mt-[50px] font-medium text-xl">
         Submit a request
       </button>
     </div>

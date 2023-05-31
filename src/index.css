@@ -61,16 +61,21 @@ body {
     top: 10px;
 }
 
-.burger:hover .burger__item {
+.burger__active .burger__item {
     background-color: transparent;
 }
 
-.burger:hover .burger__item::before {
+.burger__active .burger__item::before {
     top: 0;
     transform: rotate(45deg);
 }
 
-.burger:hover .burger__item::after {
+.burger__active .burger__item::after {
     top: 0;
     transform: rotate(135deg);
+}
+
+::placeholder {
+    color:#37AB48 !important;
+    font-size: 14px;
 }
